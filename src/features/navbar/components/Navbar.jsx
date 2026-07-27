@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaCoffee } from 'react-icons/fa'
 import { useActiveSection } from '../../../shared/hooks/useActiveSection'
 import { profile } from '../../../shared/data/profile'
 
@@ -47,8 +47,7 @@ function Navbar() {
           onClick={() => handleNavClick('home')}
           className="text-lg font-extrabold tracking-tight text-white"
         >
-          {profile.name.split(' ')[0]}
-          <span className="text-indigo-400">.</span>
+          <FaCoffee className="text-indigo-400" size={22} />
         </button>
 
         {/* Menú desktop */}

@@ -5,7 +5,7 @@
 export const profile = {
   name: 'Eddy Daniel Tucubal Sacbajá',
   role: 'Desarrollador Full Stack',
-  tagline: 'Construyo interfaces limpias y sistemas sólidos, una línea de código a la vez.',
+  tagline: 'Con el poder de tu mente, tu determinación, tu instinto y la experiencia puedes volar muy alto.',
 
   bio: `Soy un desarrollador de software en formación con enfoque Full Stack, apasionado por la creación de soluciones tecnológicas y el desarrollo de aplicaciones que generen valor. Durante mi trayectoria académica he trabajado en proyectos utilizando tecnologías como Java, JavaScript, React, Spring Boot y Node.js, fortaleciendo mis conocimientos en desarrollo frontend, backend y arquitectura de software. Además, cuento con experiencia trabajando con bases de datos relacionales y no relacionales, aplicando diferentes enfoques para la gestión y organización de la información.
 
@@ -24,6 +24,7 @@ export const profile = {
     github: 'https://github.com/EddyCode1',
     linkedin: 'https://www.linkedin.com/in/tu-usuario',
     computrabajo: 'https://www.computrabajo.com.gt/tu-usuario',
+    whatsapp: 'https://wa.me/50238131639',
   },
 
   skills: [

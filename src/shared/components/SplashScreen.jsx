@@ -1,4 +1,4 @@
-import { FaCode } from 'react-icons/fa'
+import { FaCoffee } from 'react-icons/fa'
 
 function SplashScreen() {
   return (
@@ -6,7 +6,7 @@ function SplashScreen() {
       <div className="relative flex items-center justify-center">
         <div className="absolute h-24 w-24 animate-ping rounded-full bg-indigo-500/20" />
         <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 shadow-lg shadow-indigo-500/30">
-          <FaCode className="text-3xl text-white" />
+          <FaCoffee className="text-3xl text-white" />
         </div>
       </div>
 

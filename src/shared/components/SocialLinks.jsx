@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types'
-import { FaGithub, FaLinkedin, FaBriefcase } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaBriefcase, FaWhatsapp } from 'react-icons/fa'
 
 const ICONS = {
   github: FaGithub,
   linkedin: FaLinkedin,
   computrabajo: FaBriefcase,
+  whatsapp: FaWhatsapp,
 }
 
 const LABELS = {
   github: 'GitHub',
   linkedin: 'LinkedIn',
   computrabajo: 'CompuTrabajo',
+  whatsapp: 'WhatsApp',
 }
 
 /**

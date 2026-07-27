@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaImage, FaMobileAlt, FaLaptop, FaTimes } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaImage, FaMobileAlt, FaLaptop, FaTimes, FaGlobe, FaDownload } from 'react-icons/fa'
 import { projects } from '../data/projects'
 
 function ProjectDetail() {
@@ -112,9 +112,9 @@ function ProjectDetail() {
           <FaArrowLeft size={14} /> Volver al portafolio
         </Link>
 
-        <div className="rounded-2xl bg-white p-8 shadow-sm md:p-12">
+        <div className="rounded-2xl border border-zinc-700 bg-zinc-900 p-8 shadow-sm md:p-12">
           <header className="mb-10">
-            <h1 className="text-3xl font-bold text-slate-900 md:text-4xl">{project.title}</h1>
+            <h1 className="text-3xl font-bold text-white md:text-4xl">{project.title}</h1>
           </header>
 
           {hasType ? (
@@ -122,10 +122,10 @@ function ProjectDetail() {
               {webImages.length > 0 && (
                 <div className="mb-12">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-600">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-400">
                       <FaLaptop size={16} />
                     </span>
-                    <h2 className="text-xl font-bold text-slate-900">Versión Web</h2>
+                    <h2 className="text-xl font-bold text-white">Versión Web</h2>
                   </div>
                   <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {webImages.map((image, index) => (
@@ -137,10 +137,10 @@ function ProjectDetail() {
               {movilImages.length > 0 && (
                 <div className="mb-12">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-600">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-400">
                       <FaMobileAlt size={16} />
                     </span>
-                    <h2 className="text-xl font-bold text-slate-900">Versión Móvil</h2>
+                    <h2 className="text-xl font-bold text-white">Versión Móvil</h2>
                   </div>
                   <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {movilImages.map((image, index) => (
@@ -159,17 +159,17 @@ function ProjectDetail() {
           )}
 
           <div className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-slate-900">Descripción</h2>
-            <p className="leading-relaxed text-slate-600">{project.longDescription}</p>
+            <h2 className="mb-4 text-xl font-bold text-white">Descripción</h2>
+            <p className="leading-relaxed text-zinc-300">{project.longDescription}</p>
           </div>
 
           <div className="mb-10">
-            <h2 className="mb-4 text-xl font-bold text-slate-900">Tecnologías</h2>
+            <h2 className="mb-4 text-xl font-bold text-white">Tecnologías</h2>
             <div className="flex flex-wrap gap-2">
               {project.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-600"
+                  className="rounded-full bg-zinc-800 px-4 py-2 text-sm font-semibold text-indigo-400"
                 >
                   {skill}
                 </span>
@@ -178,12 +178,32 @@ function ProjectDetail() {
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
+            {project.deployWeb && (
+              <a
+                href={project.deployWeb}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-indigo-500"
+              >
+                <FaGlobe size={14} /> Despliegue web
+              </a>
+            )}
+            {project.deployMovil && (
+              <a
+                href={project.deployMovil}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-emerald-500"
+              >
+                <FaDownload size={14} /> Despliegue móvil
+              </a>
+            )}
             {project.repo && (
               <a
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-slate-700"
+                className="inline-flex items-center gap-2 rounded-lg border border-zinc-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-zinc-300 transition hover:bg-zinc-800"
               >
                 <FaGithub size={16} /> Ver código
               </a>
@@ -193,7 +213,7 @@ function ProjectDetail() {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-6 py-3 text-sm font-bold uppercase tracking-wide text-slate-700 transition hover:bg-slate-50"
+                className="inline-flex items-center gap-2 rounded-lg border border-zinc-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-zinc-300 transition hover:bg-zinc-800"
               >
                 <FaExternalLinkAlt size={14} /> Demo en vivo
               </a>

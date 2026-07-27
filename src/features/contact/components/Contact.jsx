@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { FaEnvelope, FaPaperPlane } from 'react-icons/fa'
 import { profile } from '../../../shared/data/profile'
-import SectionTitle from '../../../shared/components/SectionTitle'
 import SocialLinks from '../../../shared/components/SocialLinks'
 
 /**
@@ -26,11 +25,18 @@ function Contact() {
   return (
     <section id="contact" className="bg-slate-900 px-6 py-20 md:py-28">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle
-          eyebrow="Contacto"
-          title="Hablemos de tu próximo proyecto"
-          description="Estoy disponible para prácticas, empleo o proyectos freelance. Escríbeme o encuéntrame en mis redes."
-        />
+        <div className="mb-10 flex flex-col items-center gap-3 md:mb-14">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400 md:text-sm">
+            Contacto
+          </span>
+          <h2 className="text-3xl font-extrabold text-white md:text-4xl">
+            Hablemos de tu próximo proyecto
+          </h2>
+          <p className="max-w-2xl text-base text-slate-400 md:text-lg">
+            Estoy disponible para prácticas, empleo o proyectos freelance. Escríbeme o encuéntrame en mis redes.
+          </p>
+          <span className="h-1 w-16 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400" />
+        </div>
 
         <div className="grid gap-10 md:grid-cols-2">
           {/* Info de contacto */}
