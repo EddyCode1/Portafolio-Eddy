@@ -1,16 +1,21 @@
 import PropTypes from 'prop-types'
-import { FaGithub, FaExternalLinkAlt, FaImage } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaImage, FaArrowRight } from 'react-icons/fa'
 
-/**
- * Tarjeta individual de proyecto: vista previa, descripción, skills y enlaces.
- */
 function ProjectCard({ project }) {
   const { title, description, skills, repo, demo } = project
 
+  const gradients = [
+    'from-indigo-500 to-cyan-500',
+    'from-emerald-500 to-teal-500',
+    'from-violet-500 to-fuchsia-500',
+    'from-rose-500 to-pink-500',
+  ]
+
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
-      {/* Vista previa / captura del proyecto (placeholder) */}
-      <div className="flex h-48 items-center justify-center bg-gradient-to-br from-indigo-500 to-cyan-500 text-white/70">
+      <div
+        className={`flex h-48 items-center justify-center bg-gradient-to-br ${gradients[project.id % gradients.length]} text-white/70`}
+      >
         <FaImage size={40} />
       </div>
 
@@ -30,12 +35,20 @@ function ProjectCard({ project }) {
         </div>
 
         <div className="mt-2 flex items-center gap-3">
+          <a
+            href={`/project/${project.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-indigo-500"
+          >
+            Explorar este proyecto <FaArrowRight size={12} />
+          </a>
           {repo && (
             <a
               href={repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-slate-700"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2 text-xs font-bold uppercase tracking-wide text-slate-700 transition hover:bg-slate-50"
             >
               <FaGithub size={14} /> Código
             </a>
@@ -58,6 +71,7 @@ function ProjectCard({ project }) {
 
 ProjectCard.propTypes = {
   project: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     skills: PropTypes.arrayOf(PropTypes.string).isRequired,
