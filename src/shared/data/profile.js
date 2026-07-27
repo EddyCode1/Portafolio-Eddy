@@ -27,12 +27,19 @@ export const profile = {
   },
 
   skills: [
+    { name: 'Java', level: 90 },
     { name: 'JavaScript', level: 90 },
-    { name: 'React', level: 85 },
-    { name: 'Node.js / Express', level: 80 },
     { name: 'HTML & CSS / Tailwind', level: 90 },
-    { name: 'SQL / MongoDB', level: 75 },
+    { name: 'React', level: 85 },
+    { name: 'React Native', level: 80 },
     { name: 'Git & GitHub', level: 85 },
+    { name: '.NET', level: 80 },
+    { name: 'Node.js / Express', level: 80 },
+    { name: 'SQL / MongoDB', level: 75 },
+    { name: 'Python', level: 70 },
+    { name: 'Angular', level: 50 },
+    { name: 'SCRUM', level: 95 },
+    { name: 'Docker', level: 80 },
   ],
 
   education: [
@@ -60,5 +67,16 @@ export const profile = {
       description:
         'Diseño y desarrollo de aplicaciones web completas (frontend y backend) como parte de mi portafolio y aprendizaje continuo.',
     },
+  ],
+
+  softSkills: [
+    'Trabajo en equipo',
+    'Liderazgo',
+    'Comunicación efectiva',
+    'Resolución de problemas',
+    'Adaptabilidad',
+    'Aprendizaje continuo',
+    'Trabajo bajo presión',
+    'Gestión del tiempo',
   ],
 }

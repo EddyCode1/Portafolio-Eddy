@@ -1,6 +1,5 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaCode, FaBirthdayCake } from 'react-icons/fa'
 import { profile } from '../../../shared/data/profile'
-import SectionTitle from '../../../shared/components/SectionTitle'
 
 const GENERAL_ITEMS = [
   { icon: FaBirthdayCake, label: 'Edad', value: profile.general.age },
@@ -15,19 +14,22 @@ const GENERAL_ITEMS = [
  */
 function About() {
   return (
-    <section id="about" className="bg-white px-6 py-20 md:py-28">
+    <section id="about" className="bg-black px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionTitle
-          eyebrow="Sobre mí"
-          title={profile.role}
-          description={profile.tagline}
-        />
+        <div className="mb-10 md:mb-14 flex flex-col items-center gap-3">
+          <span className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-indigo-400">
+            Sobre mí
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white">{profile.role}</h2>
+          <p className="max-w-2xl text-slate-400 text-base md:text-lg">{profile.tagline}</p>
+          <span className="h-1 w-16 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400" />
+        </div>
 
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           {/* Descripción */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:p-8">
             <h3 className="text-xl font-bold text-slate-900">¿Quién soy?</h3>
-            <p className="whitespace-pre-line text-slate-600 leading-relaxed">{profile.bio}</p>
+            <p className="whitespace-pre-line leading-relaxed text-slate-600">{profile.bio}</p>
             <span className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-600">
               {profile.general.status}
             </span>
@@ -38,7 +40,7 @@ function About() {
             {GENERAL_ITEMS.map(({ icon: Icon, label, value }) => (
               <div
                 key={label}
-                className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-4 shadow-sm"
+                className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-600">
                   <Icon size={18} />

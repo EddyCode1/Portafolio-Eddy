@@ -2,7 +2,8 @@ import PropTypes from 'prop-types'
 import { FaGithub, FaExternalLinkAlt, FaImage, FaArrowRight } from 'react-icons/fa'
 
 function ProjectCard({ project }) {
-  const { title, description, skills, repo, demo } = project
+  const { title, description, skills, repo, demo, images } = project
+  const previewImage = images?.find((img) => img.src)
 
   const gradients = [
     'from-indigo-500 to-cyan-500',
@@ -12,12 +13,20 @@ function ProjectCard({ project }) {
   ]
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
-      <div
-        className={`flex h-48 items-center justify-center bg-gradient-to-br ${gradients[project.id % gradients.length]} text-white/70`}
-      >
-        <FaImage size={40} />
-      </div>
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      {previewImage ? (
+        <img
+          src={previewImage.src}
+          alt={previewImage.alt}
+          className="h-48 w-full object-cover"
+        />
+      ) : (
+        <div
+          className={`flex h-48 items-center justify-center bg-gradient-to-br ${gradients[project.id % gradients.length]} text-white/70`}
+        >
+          <FaImage size={40} />
+        </div>
+      )}
 
       <div className="flex flex-1 flex-col gap-4 p-6">
         <h3 className="text-lg font-bold text-slate-900">{title}</h3>
@@ -77,6 +86,12 @@ ProjectCard.propTypes = {
     skills: PropTypes.arrayOf(PropTypes.string).isRequired,
     repo: PropTypes.string,
     demo: PropTypes.string,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        src: PropTypes.string,
+        alt: PropTypes.string,
+      })
+    ),
   }).isRequired,
 }
 

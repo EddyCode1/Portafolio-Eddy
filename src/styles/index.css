@@ -34,7 +34,7 @@
 }
 
 body {
-  background: var(--bg);
+  background: #0a0a0a;
   color: var(--text);
   font-family: var(--theme-font-family);
   font-size: var(--theme-font-size);

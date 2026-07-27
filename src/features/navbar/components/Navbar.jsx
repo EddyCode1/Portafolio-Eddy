@@ -6,7 +6,8 @@ import { profile } from '../../../shared/data/profile'
 const NAV_LINKS = [
   { id: 'home', label: 'Inicio' },
   { id: 'about', label: 'Sobre mí' },
-  { id: 'skills', label: 'Habilidades' },
+  { id: 'skills', label: 'Tecnologías' },
+  { id: 'soft-skills', label: 'Blandas' },
   { id: 'resume', label: 'Currículum' },
   { id: 'projects', label: 'Proyectos' },
   { id: 'contact', label: 'Contacto' },
