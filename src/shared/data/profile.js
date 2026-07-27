@@ -22,8 +22,8 @@ export const profile = {
 
   socials: {
     github: 'https://github.com/EddyCode1',
-    linkedin: 'https://www.linkedin.com/in/tu-usuario',
-    computrabajo: 'https://www.computrabajo.com.gt/tu-usuario',
+    linkedin: 'https://www.linkedin.com/in/eddy-daniel-tucubal-842454425/',
+    computrabajo: 'https://candidato.gt.computrabajo.com/candidate/cv',
     whatsapp: 'https://wa.me/50238131639',
   },
 
