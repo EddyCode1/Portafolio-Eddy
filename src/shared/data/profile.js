@@ -64,7 +64,7 @@ export const profile = {
     {
       title: 'Proyectos personales / freelance',
       place: 'Independiente',
-      period: '2023 - actualidad',
+      period: '2026 - actualidad',
       description:
         'Diseño y desarrollo de aplicaciones web completas (frontend y backend) como parte de mi portafolio y aprendizaje continuo.',
     },
